@@ -1,9 +1,9 @@
 import { RouterProvider } from './RouterProvider';
 
-export function Providers({ url }: { url?: string | undefined } = {}) {
+export function Providers() {
   return (
     <>
-      <RouterProvider url={url} />
+      <RouterProvider />
     </>
   );
 }

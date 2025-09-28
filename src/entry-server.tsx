@@ -1,9 +1,9 @@
 import { renderToString } from 'react-dom/server';
 import App from '@/app/App';
 
-export function render(url: string) {
+export function render() {
   try {
-    const html = renderToString(<App url={url} />);
+    const html = renderToString(<App />);
     return { html };
   } catch (error) {
     // eslint-disable-next-line no-console

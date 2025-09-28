@@ -14,11 +14,11 @@ function ErrorFallback({ error }: { error: Error }) {
   );
 }
 
-function App({ url }: { url?: string | undefined } = {}) {
+function App() {
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback}>
       <div className='app'>
-        <Providers url={url} />
+        <Providers />
       </div>
     </ErrorBoundary>
   );

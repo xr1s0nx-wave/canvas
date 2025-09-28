@@ -26,6 +26,17 @@ const routes = [
         path: '', 
         element: (
           <LazyWrapper>
+            <div>
+              <h1>Home Page</h1>
+              <p>Welcome to the home page!</p>
+            </div>
+          </LazyWrapper>
+        ),
+      },
+      { 
+        path: ROUTES.LOGIN, 
+        element: (
+          <LazyWrapper>
             <LoginPage />
           </LazyWrapper>
         ),
@@ -35,24 +46,6 @@ const routes = [
         element: (
           <LazyWrapper>
             <NotFoundPage />
-          </LazyWrapper>
-        ),
-      },
-    ],
-  },
-  {
-    path: ROUTES.LOGIN,
-    element: (
-      <LazyWrapper>
-        <Layout />
-      </LazyWrapper>
-    ),
-    children: [
-      { 
-        path: '', 
-        element: (
-          <LazyWrapper>
-            <LoginPage />
           </LazyWrapper>
         ),
       },
