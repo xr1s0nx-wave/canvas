@@ -13,6 +13,9 @@ export default async (request) => {
     // eslint-disable-next-line no-undef
     const url = new URL(request.url);
     const pathname = url.pathname;
+    
+    // eslint-disable-next-line no-undef
+    console.log('SSR rendering for path:', pathname);
 
     // Read the HTML template
     const templatePath = path.join(__dirname, '../../dist/client/index.html');

@@ -23,7 +23,7 @@ const routes = [
     ),
     children: [
       { 
-        path: ROUTES.LOGIN, 
+        path: '', 
         element: (
           <LazyWrapper>
             <LoginPage />
@@ -35,6 +35,24 @@ const routes = [
         element: (
           <LazyWrapper>
             <NotFoundPage />
+          </LazyWrapper>
+        ),
+      },
+    ],
+  },
+  {
+    path: ROUTES.LOGIN,
+    element: (
+      <LazyWrapper>
+        <Layout />
+      </LazyWrapper>
+    ),
+    children: [
+      { 
+        path: '', 
+        element: (
+          <LazyWrapper>
+            <LoginPage />
           </LazyWrapper>
         ),
       },
