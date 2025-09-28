@@ -1,0 +1,57 @@
+[build]
+  # Build command
+  command = "yarn build:ssr"
+  
+  # Directory to publish
+  publish = "dist/client"
+  
+  # Node.js version
+  [build.environment]
+    NODE_VERSION = "18"
+    NPM_FLAGS = "--version"
+
+[build.processing]
+  # Skip processing of certain files
+  skip_processing = false
+
+[build.processing.css]
+  # Minify CSS
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  # Minify JavaScript
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  # Minify HTML
+  pretty_urls = true
+
+# Redirects for SSR
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/ssr"
+  status = 200
+
+# Headers for security and performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Functions for server-side rendering
+[functions]
+  directory = "netlify/functions"
+
+# Edge functions (if needed)
+[edge_functions]
+  directory = "netlify/edge-functions"
