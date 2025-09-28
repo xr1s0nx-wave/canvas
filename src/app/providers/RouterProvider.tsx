@@ -1,7 +1,8 @@
-import { router } from '@/shared/lib/router';
+import { router, createSSRRouter } from '@/shared/lib/router';
 import { RouterProvider as ReactRouterProvider } from 'react-router-dom';
-import { Suspense } from 'react';
 
-export function RouterProvider() {
-  return <Suspense fallback={<div>Loading...</div>}><ReactRouterProvider router={router} /></Suspense>;
+export function RouterProvider({ url }: { url?: string | undefined } = {}) {
+  const currentRouter = url ? createSSRRouter(url) : router;
+  
+  return <ReactRouterProvider router={currentRouter} />;
 }

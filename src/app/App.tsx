@@ -1,11 +1,26 @@
 import './styles/globals.scss';
 import { Providers } from './providers';
+import { ErrorBoundary } from 'react-error-boundary';
 
-function App() {
+function ErrorFallback({ error }: { error: Error }) {
   return (
-    <div className='app'>
-      <Providers />
+    <div role="alert" style={{ padding: '20px', textAlign: 'center' }}>
+      <h2>Something went wrong:</h2>
+      <pre style={{ color: 'red' }}>{error.message}</pre>
+      <button onClick={() => window.location.reload()}>
+        Reload page
+      </button>
     </div>
+  );
+}
+
+function App({ url }: { url?: string | undefined } = {}) {
+  return (
+    <ErrorBoundary FallbackComponent={ErrorFallback}>
+      <div className='app'>
+        <Providers url={url} />
+      </div>
+    </ErrorBoundary>
   );
 }
 

@@ -22,4 +22,18 @@ export default defineConfig({
       },
     },
   },
+  build: {
+    rollupOptions: {
+      input: {
+        main: './index.html',
+        ssr: './src/entry-server.tsx',
+      },
+      output: {
+        format: 'es',
+      },
+    },
+  },
+  ssr: {
+    external: ['react-router-dom', 'react-router', 'react'],
+  },
 });

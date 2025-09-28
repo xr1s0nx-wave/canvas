@@ -1,17 +1,51 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, createMemoryRouter } from 'react-router-dom';
 import { ROUTES } from '@/shared/config';
 import { lazy } from 'react';
+import { LazyWrapper } from '@/shared/ui';
 
-const LoginPage = lazy(() => import('@/pages/LoginPage').then(module => ({ default: module.LoginPage })));
-const NotFoundPage = lazy(() => import('@/pages/NotFound').then(module => ({ default: module.NotFound })));
+const Layout = lazy(() =>
+  import('@/app/Layout').then(module => ({ default: module.Layout })),
+);
+const LoginPage = lazy(() =>
+  import('@/pages/LoginPage').then(module => ({ default: module.LoginPage })),
+);
+const NotFoundPage = lazy(() =>
+  import('@/pages/NotFound').then(module => ({ default: module.NotFound })),
+);
 
-export const router = createBrowserRouter([
+const routes = [
   {
-    path: ROUTES.LOGIN,
-    element: <LoginPage />,
+    path: '/',
+    element: (
+      <LazyWrapper>
+        <Layout />
+      </LazyWrapper>
+    ),
+    children: [
+      { 
+        path: ROUTES.LOGIN, 
+        element: (
+          <LazyWrapper>
+            <LoginPage />
+          </LazyWrapper>
+        ),
+      },
+      { 
+        path: '*', 
+        element: (
+          <LazyWrapper>
+            <NotFoundPage />
+          </LazyWrapper>
+        ),
+      },
+    ],
   },
-  {
-    path: '*',
-    element: <NotFoundPage />,
-  },
-]);
+];
+
+export const router = createBrowserRouter(routes);
+
+export function createSSRRouter(url: string) {
+  return createMemoryRouter(routes, {
+    initialEntries: [url],
+  });
+}
