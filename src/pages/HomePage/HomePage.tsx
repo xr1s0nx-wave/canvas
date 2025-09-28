@@ -17,7 +17,7 @@ export function HomePage() {
         </Typography>
         
         <Grid container spacing={3} justifyContent="center">
-          <Grid component="div" item>
+          <Grid component="div">
             <Button 
               component={NavLink} 
               to={ROUTES.LOGIN} 
@@ -28,7 +28,7 @@ export function HomePage() {
               Go to Login
             </Button>
           </Grid>
-          <Grid component="div" item>
+          <Grid component="div">
             <Button 
               variant="outlined" 
               color="secondary"
@@ -42,7 +42,7 @@ export function HomePage() {
       </Paper>
 
       <Grid container spacing={3}>
-        <Grid item xs={12} md={6}>
+        <Grid component="div">
           <Card elevation={2}>
             <CardContent>
               <Typography variant="h5" component="h2" gutterBottom color="primary">
@@ -60,7 +60,7 @@ export function HomePage() {
           </Card>
         </Grid>
         
-        <Grid item xs={12} md={6}>
+        <Grid component="div">
           <Card elevation={2}>
             <CardContent>
               <Typography variant="h5" component="h2" gutterBottom color="secondary">
