@@ -13,7 +13,7 @@ export function Header() {
         color='primary'
       >
         <Toolbar className={styles.toolbar ?? ''}>
-          <Typography variant='h6'>My App123</Typography>
+          <Typography variant='h6' className={styles.title ?? ''}>CANVAS</Typography>
           <ThemeToggle />
         </Toolbar>
       </AppBar>
