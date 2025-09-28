@@ -1,0 +1,33 @@
+.header {
+  width: calc(100% - 10px) !important;
+  left: 5px !important;
+  top: 5px !important;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.15s linear !important;
+  transform: translateY(-100%) !important;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerWrap {
+  position: fixed;
+  height: 80px;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+
+  &:hover {
+    .header {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0) !important;
+    }
+  }
+}

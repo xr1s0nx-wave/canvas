@@ -1,28 +1,13 @@
-import { PageProgressBar } from '@/shared/ui';
-import { Outlet, NavLink } from 'react-router-dom';
-import { ROUTES } from '@/shared/config';
-import { Box } from '@mui/material';
+import { PageProgressBar, Header } from '@/shared/ui';
+import { Outlet } from 'react-router-dom';
+import styles from './styles.module.scss';
 
 export function Layout() {
   return (
-    <>
-      <PageProgressBar />      
-      <Box component="nav" sx={{ p: 2, borderBottom: 1, borderColor: 'divider' }}>
-        <NavLink 
-          to="/" 
-          style={{ marginRight: '20px', textDecoration: 'none', color: 'inherit' }}
-        >
-          Home
-        </NavLink>
-        <NavLink 
-          to={ROUTES.LOGIN}
-          style={{ textDecoration: 'none', color: 'inherit' }}
-        >
-          Login
-        </NavLink>
-      </Box>
-      
+    <div className={styles.layout}>
+      <PageProgressBar />
+      <Header />
       <Outlet />
-    </>
+    </div>
   );
 }

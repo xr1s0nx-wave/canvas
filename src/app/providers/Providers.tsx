@@ -1,12 +1,9 @@
 import { RouterProvider } from './RouterProvider';
-import { ThemeProvider } from '@mui/material/styles';
-import { CssBaseline } from '@mui/material';
-import { theme } from '@/shared/config';
+import { ThemeProvider } from '@/shared/lib';
 
 export function Providers() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
+    <ThemeProvider>
       <RouterProvider />
     </ThemeProvider>
   );
