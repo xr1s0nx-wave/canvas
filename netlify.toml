@@ -56,7 +56,3 @@
 # Functions for server-side rendering
 [functions]
   directory = "netlify/functions"
-
-# Edge functions (if needed)
-[edge_functions]
-  directory = "netlify/edge-functions"
