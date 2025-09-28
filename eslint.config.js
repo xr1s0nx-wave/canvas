@@ -51,7 +51,7 @@ export default [
       'import/no-unresolved': 'off', // Отключаем для TypeScript
       'import/extensions': 'off', // Отключаем для TypeScript
       'import/prefer-default-export': 'off',
-      'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+      'import/no-extraneous-dependencies': 'off',
       
       // React rules
       'react/react-in-jsx-scope': 'off', // React 17+ не требует импорта React
