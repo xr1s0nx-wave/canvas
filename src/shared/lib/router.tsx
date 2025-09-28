@@ -6,6 +6,9 @@ import { LazyWrapper } from '@/shared/ui';
 const Layout = lazy(() =>
   import('@/app/Layout').then(module => ({ default: module.Layout })),
 );
+const HomePage = lazy(() =>
+  import('@/pages/HomePage').then(module => ({ default: module.HomePage })),
+);
 const LoginPage = lazy(() =>
   import('@/pages/LoginPage').then(module => ({ default: module.LoginPage })),
 );
@@ -22,6 +25,14 @@ const routes = [
       </LazyWrapper>
     ),
     children: [
+      { 
+        path: '', 
+        element: (
+          <LazyWrapper>
+            <HomePage />
+          </LazyWrapper>
+        ),
+      },
       { 
         path: ROUTES.LOGIN, 
         element: (
