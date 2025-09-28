@@ -14,7 +14,14 @@
 ```
 NODE_VERSION=20
 NODE_ENV=production
+NPM_CONFIG_PRODUCTION=false
 ```
+
+**Объяснение переменных:**
+
+- `NODE_VERSION=20` - версия Node.js (совместима с Vite 7.1.12)
+- `NODE_ENV=production` - режим продакшена
+- `NPM_CONFIG_PRODUCTION=false` - устанавливать dev-зависимости (TypeScript, ESLint и др.)
 
 #### Опциональные переменные:
 

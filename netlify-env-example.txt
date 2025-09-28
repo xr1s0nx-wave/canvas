@@ -4,6 +4,7 @@
 # Build Configuration
 NODE_VERSION=20
 NPM_FLAGS=--version
+NPM_CONFIG_PRODUCTION=false
 
 # Application Environment
 NODE_ENV=production

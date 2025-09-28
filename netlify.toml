@@ -9,6 +9,7 @@
   [build.environment]
     NODE_VERSION = "20"
     NPM_FLAGS = "--version"
+    NPM_CONFIG_PRODUCTION = "false"
 
 [build.processing]
   # Skip processing of certain files
