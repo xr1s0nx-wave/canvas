@@ -9,7 +9,10 @@
     "lint": "eslint .",
     "lint:staged": "lint-staged",
     "preview": "vite preview",
-    "prepare": "husky"
+    "prepare": "husky",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "format:staged": "prettier --write"
   },
   "dependencies": {
     "react": "^19.1.1",
