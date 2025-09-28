@@ -12,7 +12,7 @@
 #### Обязательные переменные:
 
 ```
-NODE_VERSION=18
+NODE_VERSION=20
 NODE_ENV=production
 ```
 
@@ -31,7 +31,7 @@ ENABLE_SSR=true
 
 - **Build command**: `yarn build:ssr`
 - **Publish directory**: `dist/client`
-- **Node.js version**: `18`
+- **Node.js version**: `20`
 
 ### 3. Файлы конфигурации
 
@@ -73,7 +73,7 @@ ENABLE_SSR=true
 
 #### Проблема: Ошибка сборки
 
-- Проверьте версию Node.js (должна быть 18)
+- Проверьте версию Node.js (должна быть 20)
 - Убедитесь, что все зависимости установлены
 - Проверьте логи сборки в Netlify Dashboard
 

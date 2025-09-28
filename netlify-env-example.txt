@@ -2,7 +2,7 @@
 # Copy these to your Netlify dashboard under Site settings > Environment variables
 
 # Build Configuration
-NODE_VERSION=18
+NODE_VERSION=20
 NPM_FLAGS=--version
 
 # Application Environment
