@@ -36,8 +36,8 @@ ENABLE_SSR=true
 
 В Netlify Dashboard:
 
-- **Build command**: `yarn build:ssr`
-- **Publish directory**: `dist/client`
+- **Build command**: `yarn build`
+- **Publish directory**: `dist`
 - **Node.js version**: `20`
 
 ### 3. Файлы конфигурации

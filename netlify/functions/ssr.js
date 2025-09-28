@@ -5,15 +5,19 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Import the server entry point
-const { render } = await import('../../dist/server/entry-server.js');
+// Simple render function for SSR
+async function render() {
+  // For now, return empty HTML to let client-side rendering handle everything
+  // This avoids the complexity of bundling the entire React app in Netlify Functions
+  return { html: '' };
+}
 
-export default async (request) => {
+export default async request => {
   try {
     // eslint-disable-next-line no-undef
     const url = new URL(request.url);
     const pathname = url.pathname;
-    
+
     // eslint-disable-next-line no-undef
     console.log('SSR rendering for path:', pathname);
 
