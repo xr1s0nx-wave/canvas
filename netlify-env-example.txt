@@ -1,0 +1,26 @@
+# Netlify Environment Variables
+# Copy these to your Netlify dashboard under Site settings > Environment variables
+
+# Build Configuration
+NODE_VERSION=20
+NPM_FLAGS=--version
+NPM_CONFIG_PRODUCTION=false
+
+# Application Environment
+NODE_ENV=production
+
+# Optional: If you have API endpoints
+# API_BASE_URL=https://your-api-domain.com
+# API_KEY=your-api-key
+
+# Optional: Analytics
+# GOOGLE_ANALYTICS_ID=GA-XXXXXXXXX
+# MIXPANEL_TOKEN=your-mixpanel-token
+
+# Optional: Feature flags
+# ENABLE_SSR=true
+# ENABLE_ANALYTICS=false
+
+# Optional: CDN or external services
+# CDN_URL=https://cdn.your-domain.com
+# IMAGE_OPTIMIZATION_URL=https://images.your-domain.com

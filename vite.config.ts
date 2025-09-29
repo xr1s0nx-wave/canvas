@@ -15,4 +15,25 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'),
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "@/shared/styles/_variables.scss" as *;`,
+      },
+    },
+  },
+  build: {
+    rollupOptions: {
+      input: {
+        main: './index.html',
+        ssr: './src/entry-server.tsx',
+      },
+      output: {
+        format: 'es',
+      },
+    },
+  },
+  ssr: {
+    external: ['react-router-dom', 'react-router', 'react'],
+  },
 });
